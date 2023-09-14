@@ -5,27 +5,29 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+<!--  <servlet>-->
+<!--    <servlet-name>paginaInicial</servlet-name>-->
+<!--    <servlet-class>br.edu.imepac.controller.usuarios.CadastrarUsuario</servlet-class>-->
+<!--  </servlet>-->
+<!--  <servlet>-->
+<!--    <servlet-name>listagemUsuario</servlet-name>-->
+<!--    <servlet-class>br.edu.imepac.controller.usuarios.ListagemUsuario</servlet-class>-->
+<!--  </servlet>-->
+<!--  <servlet>-->
+<!--    <servlet-name>excluirUsuario</servlet-name>-->
+<!--    <servlet-class>br.edu.imepac.controller.usuarios.ExcluirUsuario</servlet-class>-->
+<!--  </servlet>-->
+
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>paginaInicial</servlet-name>-->
+<!--    <url-pattern>/paginaInicial</url-pattern>-->
+<!--  </servlet-mapping>-->
+
   <servlet>
     <servlet-name>cadastrarUsuario</servlet-name>
     <servlet-class>br.edu.imepac.controller.usuarios.CadastrarUsuario</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>listagemUsuario</servlet-name>
-    <servlet-class>br.edu.imepac.controller.usuarios.ListagemUsuario</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>excluirUsuario</servlet-name>
-    <servlet-class>br.edu.imepac.controller.usuarios.ExcluirUsuario</servlet-class>
-  </servlet>
 
-  <servlet-mapping>
-    <servlet-name>excluirUsuario</servlet-name>
-    <url-pattern>/excluirUsuario</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>listagemUsuario</servlet-name>
-    <url-pattern>/listagemUsuario</url-pattern>
-  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>cadastrarUsuario</servlet-name>
     <url-pattern>/cadastrarUsuario</url-pattern>

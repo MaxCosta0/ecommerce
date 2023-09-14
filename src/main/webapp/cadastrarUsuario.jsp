@@ -1,49 +1,50 @@
-<%@ page import="br.edu.imepac.utils.* " %>
+<%@ page import="br.edu.imepac.utils.MensagemStatus" %>
+<%@ page import="br.edu.imepac.utils.StatusMensagemEnum" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
 <html>
 <head>
-    <style>
-        .erro {
-            background-color: red;
-            color: white;
-        }
-
-        .sucesso {
-            background-color: darkgreen;
-            color: white;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h2>Hello World!</h2>
 
 <%
     MensagemStatus mensagemStatus = (MensagemStatus) request.getAttribute("mensagemStatus");
     if (mensagemStatus != null) {
         if (mensagemStatus.getStatus() == StatusMensagemEnum.ERROR) {
 %>
-<div class="erro"><%=mensagemStatus.getMensagem()%>
-</div>
+    <div class="erro"><%=mensagemStatus.getMensagem()%>
+        <p>Deu erro</p>
+    </div>
 <%
-} else if (mensagemStatus.getStatus() == StatusMensagemEnum.SUCCESS) {
+    } else if (mensagemStatus.getStatus() == StatusMensagemEnum.SUCCESS) {
 %>
-<div class="sucesso"><%=mensagemStatus.getMensagem()%>
-</div>
+    <div class="sucesso"><%=mensagemStatus.getMensagem()%>
+    </div>
 <%
         }
     }
 %>
 
-<form action="cadastrarUsuario" method="post">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"
-           value="<%=(request.getParameter("name")==null)?"":request.getParameter("name")%>"><br><br>
+<form id="registration-form">
+    <!-- Registration fields go here -->
+    <label for="username">Nome de usuario:</label>
+    <input type="text" id="username" name="username"
+           value="<%=(request.getParameter("nome")==null)?"":request.getParameter("nome")%>">
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="email"
-           value="<%=(request.getParameter("email")==null)?"":request.getParameter("email")%>"><br><br>
+           value="<%=(request.getParameter("email")==null)?"":request.getParameter("email")%>">
 
-    <input type="submit" value="Submit">
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password"
+           value="<%=(request.getParameter("senha")==null)?"":request.getParameter("senha")%>">
+
+    <button type="submit">Cadastrar</button>
 </form>
-
 </body>
 </html>
