@@ -15,13 +15,13 @@
 <%
     MensagemStatus mensagemStatus = (MensagemStatus) request.getAttribute("mensagemStatus");
     if (mensagemStatus != null) {
-        if (mensagemStatus.getStatus() == StatusMensagemEnum.ERROR) {
+        if (mensagemStatus.getStatus() == StatusMensagemEnum.ERRO) {
 %>
     <div class="erro"><%=mensagemStatus.getMensagem()%>
         <p>Deu erro</p>
     </div>
 <%
-    } else if (mensagemStatus.getStatus() == StatusMensagemEnum.SUCCESS) {
+    } else if (mensagemStatus.getStatus() == StatusMensagemEnum.SUCESSO) {
 %>
     <div class="sucesso"><%=mensagemStatus.getMensagem()%>
     </div>
